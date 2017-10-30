@@ -1,0 +1,32 @@
+{
+  "Allin": [
+    {
+      "username": "qwe",
+      "password": "00000",
+      "con_password": "00000",
+      "firstname": "Siwakorn",
+      "lastname": "Sripetch",
+      "email": "lovelessarsher@gmail.com",
+      "tel": "0815115151",
+      "id": 1
+    },
+    {
+      "username": "din",
+      "password": "55555",
+      "con_password": "55555",
+      "firstname": "dum",
+      "lastname": "dang",
+      "email": "dingay@hotmail.com",
+      "tel": "0869155124",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "comm": "Yeah!",
+      "pic": "http://www.planwallpaper.com/static/images/4438161-spring-wallpapers.jpg",
+      "sig": "HG",
+      "id": 1
+    }
+  ]
+}

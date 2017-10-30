@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="images" href="images/sa.png">
+    <title> Rainy Room</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" typ="text/css " href="css/index.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+
+
+</head>
+
+<body>
+    <ons-page modifier="full_lg">
+        <ons-card class="lg">
+            <div class="container">
+
+                <br>
+                <br>
+                <center>
+
+                    <h1>
+                        <img id="icon" src="images/011.png" alt="">
+
+
+                        <br>
+
+                        <font color="white" size="5px">Rainy Room</font>
+
+
+                        <div class="wrapper">
+                            <form id="form" class="form-signin" action="" method="POST" role="form">
+                                <center>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" maxlength="30" autofocus/>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="30">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" id="signin" name="button" class="btn btn-lg btn-primary btn-block">Login</button>
+
+                            </form>
+                            </div>
+                            <font size="2px" color="white">OR</font>
+                            <br><br>
+
+                            <a class="waves-effect waves-light btn btn grey darken-3 pulse" type="submit" href="Signup.html">Create an Account</a>
+                            </a>
+                            </h1>
+                            <br>
+                          
+        </ons-card>
+
+        </center>
+        </center>
+
+        <div id="err" style="display:none" class="alert alert-danger alert-dismissable fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+            <strong>Incorrect Username or Password</strong>
+            <br>
+            <span style="color:rgb(255, 0, 0);font-weight:bold" id="summary"></span>
+        </div>
+        <div id="suc" style="display:none" class="alert alert-success alert-dismissable fade in">
+            <a href="#" class="close" data-dismiss="alert" aria-label="close">x</a>
+            <strong>Login Successful!!</strong>
+        </div>
+
+        </div>
+        </div>
+
+
+        <script type="text/javascript" src="js/singins.js"></script>
+        <script type="text/javascript" src="css/index.css"></script>
+
+        <script type="text/javascript">
+            function create() {
+                $.cookie('keep', 'user data');
+                console.log($.cookie('keep'));
+            }
+        </script>
+
+        <style type="text/css">
+            .lg {
+                margin: 0px;
+                padding: 0px 0px 15px;
+                font-size: 14px;
+                background-color: #0c0c0c;
+                opacity: 0.9;
+                filter: alpha(opacity=20);
+                border-bottom: 0px solid rgba(26, 26, 26, 0.43);
+                border-radius: 0;
+            }
+        </style>
+
+    </ons-page>
+</body>
+
+</html>

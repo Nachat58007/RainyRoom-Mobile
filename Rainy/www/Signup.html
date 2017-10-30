@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="images" href="images/sa.png">
+    <title> Rainy Room</title>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" typ="text/css " href="css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+</head>
+
+
+
+
+<body>
+    <ons-page modifier="full_lg">
+        <ons-card class="lg">
+            <div class="container">
+                <center>
+
+                    <h1>
+                        <img id="iconi" src="images/011.png" alt="">
+                        <br>
+                        <font color="white" size="5px">Rainy Room</font>
+                        <br>
+                        <div class="wrapper">
+
+                            <form name="registerform" id="signupForm" class="form-signin" action="" method="POST" role="form">
+                                <center>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" maxlength="12" autofocus/ onKeyup="validate()">
+                                        <div id="errUser"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="fname" name="fname" placeholder="First Name " onKeyup="validate()">
+                                        <div id="errFirst"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="lname" name="lname" placeholder="Last Name" onKeyup="validate()">
+                                        <div id="errLast"></div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="email" name="username" placeholder="E-mail" onKeyup="validate()">
+                                        <div id="errEmail"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" maxlength="30" autofocus/
+                                            onKeyup="validate()">
+                                        <div id="errPass"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="con_password" name="con_password" placeholder="Confirm Password" maxlength="30"
+                                            onKeyup="validate()">
+                                        <div id="errConform"></div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="tel" name="tel" maxlength="10" placeholder="Tel">
+                                    </div>
+                                    <li>
+                                        <a class="waves-effect waves-light btn btn grey darken-3 pulse" onclick="validate()">
+                                            <input type="button" value="register" id="create" onclick="validate(); finalValidate();">
+                                        </a>
+                                        <div id="errFinal"></div>
+                                    </li>
+                                   <br>
+                                    <li>
+                                     <a class="waves-effect waves-light btn btn blue darken-4" href="index.html" >
+                                        <p>Back to login</p>       
+                                     </a>
+                                    </li>
+
+                                </center>
+                            </form>
+                </center>
+                </div>
+            </div>
+        </ons-card>
+        <script type="text/javascript" src="js/singup.js"></script>
+        <script type="text/javascript" src="css/index.css"></script>
+        <script type="text/javascript">
+            function create() {
+                $.cookie('keep', 'user data');
+                console.log($.cookie('keep'));
+            }
+        </script>
+        <style type="text/css">
+            .lg {
+                margin: 0px;
+                padding: 0px 0px 15px;
+                font-size: 14px;
+                background-color: #0c0c0c;
+                opacity: 0.9;
+                filter: alpha(opacity=20);
+                border-bottom: 0px solid rgba(26, 26, 26, 0.43);
+                border-radius: 0;
+            }
+        </style>
+    </ons-page>
+</body>
+
+</html>

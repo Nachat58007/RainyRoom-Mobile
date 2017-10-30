@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="images" href="images/sa.png">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" typ="text/css " href="css/index.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+
+
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <title>Rainy Room</title>
+</head>
+
+
+
+<body>
+
+  <ons-page>
+    <ons-tabbar id="tabbar">
+      <ons-tab icon="fa-th-list" page="home.html" active>
+      </ons-tab>
+      <ons-tab icon="fa-cloud" page="weather.html">
+      </ons-tab>
+      <ons-tab icon="fa-map-o" page="Map.html">
+      </ons-tab>
+      <ons-tab icon="fa-user-circle-o" page="profile.html">
+      </ons-tab>
+
+    </ons-tabbar>
+  </ons-page>
+
+
+
+
+  <!-- The Post Page -->
+
+  <template id="home.html">
+    <ons-page class="main_pages" id="home-page" modifier="full_bg">
+
+      <ons-toolbar>
+        <div class="left">
+          &nbsp <img id="icon2" src="images/011.png" alt="">
+          </div>
+       
+            <div class="right">
+              <li>
+                 <a class="waves-effect waves-light btn btn red darken-4" href="index.html"> 
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+              </li>
+            </div>
+           </div>
+      </ons-toolbar>
+
+      <div class="progress">
+        <div class="indeterminate" style="width: 100%"></div>
+      </div>
+      <ons-card class="post">
+        <br>
+        <div class="container">
+          <center>
+            <form method="post">
+              <textarea typw="submit" name="comments" id="comma" style="width:100%;height:50px;padding:2%;font-size:1.2em;background-color:rgb(82, 95, 110);"
+                placeholder="Say Something"></textarea>
+          </center>
+
+
+
+
+          <!--up photo..........................................................................................................-->
+          <center>
+            <i class="fa fa-picture-o fa-4x" aria-hidden="true">
+              <i class="fa fa-long-arrow-right" aria-hidden="true"></i> &nbsp
+              <img id="img" height="100">
+            </i>
+            <input id="inp" type='file'>
+            <br>
+            <textarea id="bb" disabled></textarea>
+            <!--base64 must edit -->
+
+
+            <div class="uploady">
+              <input type="text" placeholder=" &nbsp Photo Url" id="pic" />
+            </div>
+            <div class="uploady2">
+              <input type="text" placeholder=" &nbsp Signature" id="sig" />
+            </div>
+      </ons-card>
+      <button type="submit" id="Posto" name="button" class="waves-effect waves-light btn btn grey darken-3 pulse" onClick="window.location.reload();">Post</button>
+      </center>
+      </form>
+      </div>
+      <br>
+
+      <font size='5em' color='black'>
+        <div id="Showa"></div>
+      </font>
+
+
+      </center>
+
+      <script id="template1" type="x-tmpl-mustache">
+                              
+                            <div id="posts{{id}}">
+                                     <center>
+                                 
+                                  <div class="card black">
+                                  <div style="float:right">
+                                  
+                                  <button class="waves-effect waves-light btn green darken-3" id="" onclick='savepost({{id}})'> <i class="large material-icons">save</i></button>
+                                  <button class="waves-effect waves-light btn light-blue accent-4" id="" onclick='editpost({{id}})'> <i class="large material-icons">mode_edit</i></button>
+                                  <button class="waves-effect waves-light btn red accent-4" id="" onclick='deletepost({{id}})'> <i class="large material-icons">cancel</i></button>
+                  
+                                 </div>
+                                  <br>
+                                  <div class="white-text">
+                                     
+                                  <input type="text"  id="comm{{id}}" value="{{comm}}" readonly></input>
+                                  <font size="2em">Pic URL:</font>
+                                  <input type="text" id="pic{{id}}" value="{{pic}}" readonly></input>
+                                  <img src="{{pic}}" height="100%" width="100%" alt="">
+                                
+                                  <img src="{{bb}}" height="100%" width="100%" alt="">
+                               
+                                  
+                                  <font size="2em">Post by: </font>
+                                   <center><input type="text" id="sig{{id}}" value="{{sig}}" readonly></input></center>
+                                   
+                              </div>
+                              </div>
+                            
+                              </center>
+                         
+                              </div>
+                              </script>
+
+      <script type="text/javascript" src="js/Timeline.js"></script>
+
+      <script type="text/javascript">
+        function create() {
+          $.cookie('keep', 'user data');
+          console.log($.cookie('keep'));
+        }
+      </script>
+
+
+
+      <style type="text/css">
+        .post {
+          margin: 0px;
+          padding: 0px 0px 15px;
+          font-size: 14px;
+          background-color: #657c8f;
+          opacity: 0.9;
+          filter: alpha(opacity=20);
+          border-bottom: 0px solid rgba(26, 26, 26, 0.43);
+          border-radius: 0;
+        }
+      </style>
+    </ons-page>
+  </template>
+
+
+  <!--weather-->
+  <template id="weather.html">
+    <ons-page class="main_pages" id="weather-page" modifier="full_gg">
+     <ons-toolbar>
+        <div class="left">
+          &nbsp <font color="white" size="3em">What's the Weather?</font>
+          </div>
+       
+            <div class="right">
+              <li>
+                 <a class="waves-effect waves-light btn btn red darken-4" href="index.html"> 
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+              </li>
+            </div>
+           </div>
+      </ons-toolbar>
+
+      <div class="progress">
+        <div class="indeterminate" style="width: 100%"></div>
+      </div>
+      <ons-card class="fore">
+        <br>
+        <center>
+          <div class="input-field col s6">
+            <font color="black" size="3em">Input a city</font>
+            <input multiple class="form-control" id="incity" placeholder=" &nbsp City name">
+          </div>
+          <a class="waves-effect waves-light btn btn blue-grey darken-4 pulse" type="submit" id="loadw">Forecast</a>
+          <div id="wpanel"></div>
+          </div>
+
+        </center>
+        <script type="text/javascript" src="js/index.js"></script>
+      </ons-card>
+      <style type="text/css">
+        .fore {
+          margin: 0px;
+          padding: 0px 0px 15px;
+          font-size: 14px;
+          background-color: #ffffff96;
+          opacity: 0.8;
+          filter: alpha(opacity=20);
+          border-bottom: 1px solid rgba(26, 26, 26, 0.43);
+          border-radius: 0;
+        }
+      </style>
+    </ons-page>
+  </template>
+
+  <template id="Map.html">
+    <ons-page class="main_pages" id="map-page">
+        <ons-toolbar>
+            <div class="left">
+                &nbsp <font color="white" size="3em">Where are you?</font>
+              </div>
+           
+                <div class="right">
+                  <li>
+                     <a class="waves-effect waves-light btn btn red darken-4" href="index.html"> 
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </div>
+               </div>
+          </ons-toolbar>
+
+      <div id="map"></div>
+
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOcCKs2Jgnor860QJxrE1GuHbwHKZKzF0&callback=initMap">
+      </script>
+
+
+
+      <style>
+        #map {
+          height: 100%;
+        }
+
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+
+
+      <script type="text/javascript" src="js/map.js"></script>
+    </ons-page>
+  </template>
+
+
+  <template id="profile.html">
+    <ons-page class="main_pages" id="profile-page" modifier="full_bc">
+        <ons-toolbar>
+            <div class="left">
+                &nbsp <font color="white" size="3em">All of you</font>
+              </div>
+           
+                <div class="right">
+                  <li>
+                     <a class="waves-effect waves-light btn btn red darken-4" href="index.html"> 
+                      <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </div>
+               </div>
+          </ons-toolbar>
+      <div class="progress">
+        <div class="indeterminate" style="width: 100%"></div>
+      </div>
+      <center>
+
+        <br>
+        </script>
+
+
+        <div id="Showac"></div>
+        <script id="template4" type="x-tmpl-mustache">
+                                            
+                  <center>
+              <ons-card class="Acc">
+              <div class="card grey darken-4">
+              <div class="card-content white-text">
+              <font size="2.5em" color="white"><br>
+              <p> Name : &nbsp {{firstname}} &nbsp {{lastname}}</p>
+                <br>
+              <p> Email : &nbsp {{email}}</p><br>
+              Tel. : &nbsp {{tel}} <br>
+                </font>
+      </div></div></ons-card>
+            </script>
+
+
+      </center>
+      <style>
+        .Acc {
+          margin: 0px;
+          padding: 0px 0px 15px;
+          font-size: 14px;
+          background-color: #353535;
+          opacity: 0.9;
+          filter: alpha(opacity=20);
+          border-bottom: 1px solid rgba(26, 26, 26, 0.43);
+          border-radius: 0;
+        }
+      </style>
+
+      <script type="text/javascript" src="js/ac.js"></script>
+
+
+    </ons-page>
+  </template>
+
+
+  <style>
+    .tabbar {
+      background-color: rgb(46, 46, 46);
+    }
+
+    :checked+.tabbar__button {
+      color: rgb(65, 113, 158);
+    }
+
+    .tabbar__button {
+      color: #ffffff;
+    }
+
+    .toolbar {
+      background-color: rgb(35, 56, 70);
+    }
+
+    .toolbar__title {
+      text-align: center;
+      color: #1f1f21;
+    }
+
+    .toolbar-button {
+      color: #2b4e58;
+    }
+  </style>
+
+
+
+
+</body>
+
+</html>
